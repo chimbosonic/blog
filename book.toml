@@ -1,0 +1,16 @@
+[book]
+authors = ["Alexis Lowe"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Chimbosonic's Blog"
+
+
+[html]
+theme = "ayu"
+default-theme = "ayu"
+preferred-dark-theme = "ayu"
+site-url = "/~chimbo/blog/"
+
+[output.html.search]
+enable = true   
