@@ -1,0 +1,1 @@
+{"rule":"FULL_WITH_OF","sentence":"^\\QAs you can see the disk \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q and \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q are full with only \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q left unallocated.\\E$"}
