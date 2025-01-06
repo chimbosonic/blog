@@ -6,11 +6,13 @@ src = "src"
 title = "Chimbosonic's Blog"
 
 
-[html]
+[output.html]
 theme = "ayu"
 default-theme = "ayu"
 preferred-dark-theme = "ayu"
 site-url = "/~chimbo/blog/"
+git-repository-url = "https://github.com/chimbosonic/blog"
+git-repository-icon = "fa-github"
 
 [output.html.search]
 enable = true   
