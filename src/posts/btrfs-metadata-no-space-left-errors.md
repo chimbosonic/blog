@@ -5,17 +5,17 @@ My data is in two categories: important and reproducible data (can be easily rec
 
 I follow these rules as best practice:
 
- 1. Important data must have 3 copies:
+1.  Important data must have 3 copies:
     - Local Network accessible copy
     - Local copy on cold storage
-    - Offsite copy on cold storage
- 2. Data integrity for important data is crucial
+    - Off-site copy on cold storage
+2.  Data integrity for important data is crucial
     - Using `squashfs` and then creating parity data of the archives using `par2` to mitigate bit-rot
- 3. Full data integrity of reproducible data isn't important
+3.  Full data integrity of reproducible data isn't important
     - I can accept bit-rot but not losing access to the files
     - Knowing a file is corrupt is important so that I can recreate or retrieve it.
- 4. Local network data access must be fast and low latency
- 5. Must not break the bank
+4.  Local network data access must be fast and low latency
+5.  Must not break the bank
 
 ## Local data server setup
 
@@ -76,7 +76,7 @@ As you can see, the disk `sdc` and `sda` are full with only `1.02MiB` left unall
 To help me better understand the state of the disks I drew a diagram.
 ![raid1-c4](../assets/pool-raid1c4.jpg)
 
-The first thing that stood out was the behavior of the `RAID1C4` profile for the metadata. It forces [BTRFS](https://btrfs.readthedocs.io/en/latest/Introduction.html) to create 4 copies of the metadata, one on each disk. So when I tried to write new data to the storage pool [BTRFS](https://btrfs.readthedocs.io/en/latest/Introduction.html) failed and in order to protect the data and the storage pool, it had set the pool to read-only.
+The first thing that stood out was the behaviour of the `RAID1C4` profile for the metadata. It forces [BTRFS](https://btrfs.readthedocs.io/en/latest/Introduction.html) to create 4 copies of the metadata, one on each disk. So when I tried to write new data to the storage pool [BTRFS](https://btrfs.readthedocs.io/en/latest/Introduction.html) failed and in order to protect the data and the storage pool, it had set the pool to read-only.
 
 ## The fix
 
@@ -86,7 +86,7 @@ I used `10Gb` from the slack section (the extra `100Gb` of unused disk space) to
 
 `sudo btrfs filesystem resize 1:+10G /pool` and `sudo btrfs filesystem resize 2:+10G /pool`
 
-*Caution this requires the pool to be mounted in read-write so you might have to umount the pool and remount it. See gotcha in the Conclusion.*
+_Caution this requires the pool to be mounted in read-write, so you might have to umount the pool and remount it. See gotcha in the Conclusion._
 
 This provides some extra space that [BTRFS](https://btrfs.readthedocs.io/en/latest/Introduction.html) can use to move chunks around when it converts the metadata profile from `RAID1C4` to `RAID1`.
 `RAID1` guarantees that the metadata is stored on 2 disks instead of 4, removing our deadlock.
@@ -152,3 +152,13 @@ Another gotcha to be aware of if the pool has less than `1Gb` of space, and you 
 It is impossible to cancel a balance once the pool gets into read-only mode. The only way to stop it is to reboot and make sure not to mount the pool on boot. Once booted, you can mount it with the `skip_balance` option (`sudo mount -o skip_balance  /dev/sdc /pool`) which will set the balance operation to `paused`. Use `sudo btrfs balance cancel /pool` to cancel it and proceed with resizing the pool.
 
 ###### Last updated 2023-11-2
+
+<!-- begin comments -->
+<!-- comment blacklist -->
+<script>BBB_MASTODON_COMMENTS_BLACKLIST = new Set([]);</script>
+<h2>Comments</h2>
+<a id="comments-view" href="https://fosstodon.org/@chimbosonic/111342471951670738" data-comments-id="111342471951670738">View Comments</a>
+<a id="comments-reply" href="https://fosstodon.org/@chimbosonic/111342471951670738">Reply</a>
+<div id="comments-container"></div>
+<div id="comments-cta">Click on "View Comments" to see the comments.</div>
+<!-- end comments -->

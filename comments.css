@@ -1,0 +1,166 @@
+/* Mastodon Comments */
+/* All Credit to beej.us - https://beej.us/blog/data/mastodon-comments/ */
+.mast-comment {
+  border: 1px solid #e6e1cf;
+  border-radius: 5px;
+  margin: 15px;
+  padding: 10px;
+  background: #191f26;
+}
+
+.mast-comment-id {
+  color: #555;
+  font-size: 0.6em;
+}
+
+.mast-comment-header {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+.mast-comment-header a {
+  text-decoration: none;
+}
+
+.mast-comment-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mast-comment-avatar img {
+  width: 32px;
+  height: 32px;
+}
+
+.mast-comment-ident {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  font-size: 0.85em;
+}
+
+.mast-comment-acct {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  padding-left: 5px;
+  font-size: 0.85em;
+  color: #555;
+}
+
+.mast-comment-acct a {
+  color: #555;
+}
+
+.mast-comment-attachments {
+  font-size: 0.9em;
+}
+
+.mast-comment-attachment a {
+  text-decoration: none;
+  color: #555;
+}
+
+.mast-comment-attachment a:hover {
+  text-decoration: underline;
+}
+
+.mast-comment-display-name {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  padding-left: 5px;
+  color: #000;
+}
+
+.mast-comment-display-name a {
+  color: #000;
+}
+
+.mast-comment-emoji {
+  height: 1em;
+}
+
+.mast-comment-date {
+  flex-grow: 2;
+  text-align: right;
+  font-size: 0.65em;
+}
+
+.mast-comment-date a {
+  color: #555;
+  text-decoration: none;
+}
+
+.mast-comment-date a:hover {
+  text-decoration: underline;
+}
+
+#comments-container {
+  font-size: 0.9em;
+}
+
+#comments-view,
+#comments-reply {
+  display: inline-block;
+  padding: 5px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #737480;
+  background: #c5c5c5;
+}
+
+#comments-view.dim {
+  color: #aaa;
+  cursor: default;
+}
+
+#comments-cta {
+  font-style: italic;
+  font-size: 0.9em;
+  margin-top: 2ex;
+}
+
+@media screen and (max-width: 700px) {
+  .pagetop {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  #mainbody {
+    margin: 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    box-shadow: 1px 1px 10px #000;
+  }
+
+  figure {
+    margin-inline: 0;
+    padding: 0;
+  }
+
+  div.figure.right {
+    float: inherit;
+    max-width: inherit;
+    margin-left: inherit;
+    padding-left: inherit;
+    padding-right: inherit;
+  }
+
+  div.figure.right.mw50 {
+    max-width: inherit;
+  }
+
+  .indent {
+    margin-left: 2em;
+  }
+
+  .mast-comment {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
