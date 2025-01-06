@@ -2,9 +2,9 @@
 
 ## Rewriting My Skills: A Personal Journey Toward Better Engineering
 
-In September 2021, I changed my career, I went from the world of Cyber Security to Software Engineering and System Design. *Not long after*, I was promoted to a Principal Engineer role which I felt ready for due to my extensive background in designing, building and deploying complex, resilient systems and my ability to take the lead in these types of projects. 
+In September 2021, I changed my career, I went from the world of Cyber Security to Software Engineering and System Design. Not long after, I was promoted to a Principal Engineer role which I felt ready for due to my extensive background in designing, building and deploying complex, resilient systems and my ability to take the lead in these types of projects. 
 
-I quickly learned that my software skills were really quite superficial. I had spent most of my career *up to that point* learning to find vulnerabilities in other people’s code and the ins and outs of memory buffers but I never had to write quality code myself. 
+I quickly learned that my software skills were really quite superficial. I had spent most of my career up to that point learning to find vulnerabilities in other people’s code and the ins and outs of memory buffers but I never had to write quality code myself. 
 
 In my new role, this started to bother me quite a bit, I couldn’t always explain why the code was not right even though my instinct said there was something wrong, and for the first time in a long time, senior engineers on my teams would confuse me. It was a new challenge and I was really up for it.
 
@@ -16,7 +16,7 @@ I had written code in Rust before but in order to learn more I started by implem
 
 ## Huff-Tree-Tap v0.0.x
 
-In my first attempt to implement Huffman Encoding, I made quite a few mistakes and 100% misunderstood the borrow checker. I did change quite a few things that helped in later iterations.
+In my first attempt to implement Huffman Encoding, I made quite a few mistakes and 100% misunderstood the borrow checker.
 
 ### The mistakes
 
@@ -88,7 +88,7 @@ At this point I was happy with how the code looked but I really wanted to contin
 
 To find the slowest parts of my code, I used `cargo flamegraph` to profile my repo. It uses Linux’s `perf` under the hood to generate these detailed flame-graphs that help visualise the runtime of functions.
 
-![flamegraph.svg](https://prod-files-secure.s3.us-west-2.amazonaws.com/153583c8-7f95-4cba-8652-846532c55e67/16d6d54b-a308-4a26-9bd1-3e9f569dc48d/flamegraph.svg)
+![Flamegraph](../assets/flamegraph.svg)
 
 This led me to realise that manipulating strings is very slow. When I originally wrote this library, I used `String` to store the bit format encoding as I had found that you could format a `u8`  into its binary representation by just calling `format!("{:b}", x)` . 
 
