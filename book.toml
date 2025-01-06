@@ -7,7 +7,6 @@ title = "Chimbosonic's Blog"
 
 
 [output.html]
-theme = "ayu"
 default-theme = "ayu"
 preferred-dark-theme = "ayu"
 site-url = "/~chimbo/blog/"
