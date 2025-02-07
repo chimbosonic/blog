@@ -10,7 +10,7 @@ I've been using docker-compose to deploy the services I run on my home servers (
 
 I control variables that are shared between these services, but change based on the machine hosting it (Usually just the domain name change) via `{{ hostname }}.env` files. This has been working for me though one major downside is that the .env file can't be committed to git due to it containing secrets such as api keys.
 
-This is where I've been leveraging vault and specifically [vault agent](https://developer.hashicorp.com/vault/docs/agent-and-proxy/agent) to template the `.env` file so I can push the `.env` template but not the secrets themselves.
+This is where I've been leveraging vault and specifically [vault agent](https://developer.hashicorp.com/vault/docs/agent-and-proxy/agent) to template the `.env` file, so I can push the `.env` template but not the secrets themselves.
 
 Vault agent is capable of templating a file using go template syntax and generates the files with data from vault.
 

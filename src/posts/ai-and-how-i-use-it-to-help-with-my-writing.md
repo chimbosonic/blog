@@ -8,6 +8,6 @@ One more thing I’ve found is that the AI needs very little to generate the tex
 
 Now asking the AI to write cover letters has also been eye-opening, the amount of information on a company that it is capable of picking up and introducing into the letter is crazy. To the point that even though I had done research on the company prior to writing the cover letter I was learning new things via the generated text.
 
-To conclude, I was quite skeptical about Generative AI, but I am now convinced that this is game changing. We just need slightly better tooling. Perhaps Microsoft should bring back Clippy with a GPT-4 backend.
+To conclude, I was quite sceptical about Generative AI, but I am now convinced that this is game changing. We just need slightly better tooling. Perhaps Microsoft should bring back Clippy with a GPT-4 backend.
 
 ###### Last updated 2023-07-04

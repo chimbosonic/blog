@@ -8,7 +8,7 @@ I follow these rules as best practice:
  1. Important data must have 3 copies:
     - Local Network accessible copy
     - Local copy on cold storage
-    - Offsite copy on cold storage
+    - Off-site copy on cold storage
  2. Data integrity for important data is crucial
     - Using `squashfs` and then creating parity data of the archives using `par2` to mitigate bit-rot
  3. Full data integrity of reproducible data isn't important
@@ -76,7 +76,7 @@ As you can see, the disk `sdc` and `sda` are full with only `1.02MiB` left unall
 To help me better understand the state of the disks I drew a diagram.
 ![raid1-c4](../assets/pool-raid1c4.jpg)
 
-The first thing that stood out was the behavior of the `RAID1C4` profile for the metadata. It forces [BTRFS](https://btrfs.readthedocs.io/en/latest/Introduction.html) to create 4 copies of the metadata, one on each disk. So when I tried to write new data to the storage pool [BTRFS](https://btrfs.readthedocs.io/en/latest/Introduction.html) failed and in order to protect the data and the storage pool, it had set the pool to read-only.
+The first thing that stood out was the behaviour of the `RAID1C4` profile for the metadata. It forces [BTRFS](https://btrfs.readthedocs.io/en/latest/Introduction.html) to create 4 copies of the metadata, one on each disk. So when I tried to write new data to the storage pool [BTRFS](https://btrfs.readthedocs.io/en/latest/Introduction.html) failed and in order to protect the data and the storage pool, it had set the pool to read-only.
 
 ## The fix
 
