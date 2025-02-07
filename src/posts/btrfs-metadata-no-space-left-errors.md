@@ -86,7 +86,7 @@ I used `10Gb` from the slack section (the extra `100Gb` of unused disk space) to
 
 `sudo btrfs filesystem resize 1:+10G /pool` and `sudo btrfs filesystem resize 2:+10G /pool`
 
-*Caution this requires the pool to be mounted in read-write so you might have to umount the pool and remount it. See gotcha in the Conclusion.*
+*Caution this requires the pool to be mounted in read-write, so you might have to umount the pool and remount it. See gotcha in the Conclusion.*
 
 This provides some extra space that [BTRFS](https://btrfs.readthedocs.io/en/latest/Introduction.html) can use to move chunks around when it converts the metadata profile from `RAID1C4` to `RAID1`.
 `RAID1` guarantees that the metadata is stored on 2 disks instead of 4, removing our deadlock.

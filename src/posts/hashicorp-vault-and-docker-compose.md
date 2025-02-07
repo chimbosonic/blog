@@ -6,15 +6,15 @@ Hello everyone,
 
 This time I wanted to cover how I use Hashicorp's [Vault](https://www.hashicorp.com/products/vault) to manage secrets used by docker-compose.
 
-I've been using docker-compose to deploy the services I run on my home servers (I have 2 machines that host the services and kubernetes was overkill) for bit over 4 years now. The overall setup has served me well with it being simple and straight forward to deploy new services or update existing ones. All the compose files are stored in a git repo. The structure of the repo allows me to define "services" which are individual `docker-compose.yml` files that define a set of containers which together gives me a service I want to host at home.
+I've been using docker-compose to deploy the services I run on my home servers (I have 2 machines that host the services and Kubernetes was overkill) for a bit over 4 years now. The overall setup has served me well with it being simple and straight forward to deploy new services or update existing ones. All the compose files are stored in a git repo. The structure of the repo allows me to define "services" which are individual `docker-compose.yml` files that define a set of containers which together gives me a service I want to host at home.
 
-I control variables that are shared between these services but change based on the machine hosting it (Usually just the domain name change) via `{{ hostname }}.env` files. This has been working for me though one major downside is that the .env file can't be commited to git due to it containing secrets such as api keys.
+I control variables that are shared between these services, but change based on the machine hosting it (Usually just the domain name change) via `{{ hostname }}.env` files. This has been working for me though one major downside is that the .env file can't be committed to git due to it containing secrets such as api keys.
 
 This is where I've been leveraging vault and specifically [vault agent](https://developer.hashicorp.com/vault/docs/agent-and-proxy/agent) to template the `.env` file so I can push the `.env` template but not the secrets themselves.
 
 Vault agent is capable of templating a file using go template syntax and generates the files with data from vault.
 
-Todo this we need a few things, first you need a running vault instance. I would recommend following the great docs from Hasicorp which you can find [here](https://developer.hashicorp.com/vault).
+To do this we need a few things, first you need a running vault instance. I would recommend following the great docs from Hasicorp which you can find [here](https://developer.hashicorp.com/vault).
 
 ## Vault Setup
 
@@ -63,7 +63,7 @@ ui = true
 
 ## Using Vault for storing secrets
 
-So now we have vault running we can create secrets to do this we need the cli tool (You can do it via the WebUI but I would recommend getting comfortable with the cli tool)
+So now we have vault running we can create secrets to do this we need the cli tool (You can do it via the WebUI, but I would recommend getting comfortable with the cli tool)
 
 Creating a secret:
 
@@ -115,7 +115,7 @@ MY_SECRET_API_KEY={{ .Data.data.apikey }}
 {{ end }}
 ```
 
-This will fetch the `services/example` secret from the [kv](https://developer.hashicorp.com/vault/docs/secrets/kv/kv-v2) engine and write the vaule of the key `apikey`.
+This will fetch the `services/example` secret from the [kv](https://developer.hashicorp.com/vault/docs/secrets/kv/kv-v2) engine and write the value of the key `apikey`.
 
 Generating us a file that looks like this:
 
@@ -124,7 +124,7 @@ MY_NON_TEMPLATED_VAR=BLAH
 MY_SECRET_API_KEY=super_secret_api_key
 ```
 
-docker-compose can now reffer to that file making the secret available to the containers.
+docker-compose can now refer to that file making the secret available to the containers.
 
 ## Conclusion
 
