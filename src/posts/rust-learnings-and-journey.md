@@ -28,7 +28,7 @@ My second mistake was that I fought with the borrow checker rather than let it t
 
 Rust's testing framework simplicity meant that I wrote a lot of tests (at the time I was also learning about test driven development for work).
 
-Rust's documentation also helped a lot. The second I learned that I could generate [doc.rs](http://doc.rs) from my own code and have it include the docs for my dependencies my inner documentation nerd took the wheel and went off to the races.
+Rust's documentation also helped a lot. The second I learned that I could generate [docs.rs](http://docs.rs) from my own code and have it include the docs for my dependencies my inner documentation nerd took the wheel and went off to the races.
 
 Another thing I did was make sure I knew how to package my library, which lead me to learn how [crates.io](https://crates.io/crates/huff-tree-tap) and cargo work but also how build a CI/CD pipeline for Rust. These ended up being very straight forward.
 
