@@ -5,17 +5,17 @@ My data is in two categories: important and reproducible data (can be easily rec
 
 I follow these rules as best practice:
 
- 1. Important data must have 3 copies:
+1.  Important data must have 3 copies:
     - Local Network accessible copy
     - Local copy on cold storage
     - Off-site copy on cold storage
- 2. Data integrity for important data is crucial
+2.  Data integrity for important data is crucial
     - Using `squashfs` and then creating parity data of the archives using `par2` to mitigate bit-rot
- 3. Full data integrity of reproducible data isn't important
+3.  Full data integrity of reproducible data isn't important
     - I can accept bit-rot but not losing access to the files
     - Knowing a file is corrupt is important so that I can recreate or retrieve it.
- 4. Local network data access must be fast and low latency
- 5. Must not break the bank
+4.  Local network data access must be fast and low latency
+5.  Must not break the bank
 
 ## Local data server setup
 
@@ -86,7 +86,7 @@ I used `10Gb` from the slack section (the extra `100Gb` of unused disk space) to
 
 `sudo btrfs filesystem resize 1:+10G /pool` and `sudo btrfs filesystem resize 2:+10G /pool`
 
-*Caution this requires the pool to be mounted in read-write, so you might have to umount the pool and remount it. See gotcha in the Conclusion.*
+_Caution this requires the pool to be mounted in read-write, so you might have to umount the pool and remount it. See gotcha in the Conclusion._
 
 This provides some extra space that [BTRFS](https://btrfs.readthedocs.io/en/latest/Introduction.html) can use to move chunks around when it converts the metadata profile from `RAID1C4` to `RAID1`.
 `RAID1` guarantees that the metadata is stored on 2 disks instead of 4, removing our deadlock.

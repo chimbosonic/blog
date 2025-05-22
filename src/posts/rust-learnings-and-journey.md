@@ -2,9 +2,9 @@
 
 ## Rewriting My Skills: A Personal Journey Toward Better Engineering
 
-In September 2021, I changed my career, I went from the world of Cybersecurity to Software Engineering and System Design. Not long after, I was promoted to a Principal Engineer role which I felt ready for due to my extensive background in designing, building and deploying complex, resilient systems and my ability to take the lead in these types of projects. 
+In September 2021, I changed my career, I went from the world of Cybersecurity to Software Engineering and System Design. Not long after, I was promoted to a Principal Engineer role which I felt ready for due to my extensive background in designing, building and deploying complex, resilient systems and my ability to take the lead in these types of projects.
 
-I quickly learned that my software skills were really quite superficial. I had spent most of my career up to that point learning to find vulnerabilities in other people's code and the ins and outs of memory buffers, but I never had to write quality code myself. 
+I quickly learned that my software skills were really quite superficial. I had spent most of my career up to that point learning to find vulnerabilities in other people's code and the ins and outs of memory buffers, but I never had to write quality code myself.
 
 In my new role, this started to bother me quite a bit, I couldn't always explain why the code was not right even though my instinct said there was something wrong, and for the first time in a long time, senior engineers on my teams would confuse me. It was a new challenge, and I was really up for it.
 
@@ -12,7 +12,7 @@ In my new role, this started to bother me quite a bit, I couldn't always explain
 
 In order to reduce the gap in my knowledge, I incorporated coding into my life as a hobby. I first started looking into the languages the company I work for uses, C# and TypeScript, however at the time I was reading a lot about Rust and also listening to [On The Metal](https://onthemetal.transistor.fm/) podcast which lead me to decide to learn Rust instead. My reasons behind the change were that I was doing this for myself and not the company (though the end result has been beneficial in that respect as well), and I had also read a blog post claiming that Rust holds your hand and helps you avoid simple mistakes. This, as it turns out, was both accurate and misleading.
 
-I had written code in Rust before but in order to learn more I started by implementing Huffman Encoding in Rust. 
+I had written code in Rust before but in order to learn more I started by implementing Huffman Encoding in Rust.
 
 ## Huff-Tree-Tap v0.0.x
 
@@ -36,15 +36,15 @@ In conclusion, I managed to create a working Huffman Encoding library which was 
 
 ## Learning More
 
-After implementing Huffman encoding, I felt like I was ready to take on something new. This time around I needed a project that was actively used and had more eyes on it as I wanted feedback on what I was working on. 
+After implementing Huffman encoding, I felt like I was ready to take on something new. This time around I needed a project that was actively used and had more eyes on it as I wanted feedback on what I was working on.
 
-One of the technologies that fascinates me the most is OpenPGP, especially the identity side of things (the subject of my final year project in university was on Enforcement of Access Control in P2P Networks Utilising OpenPGP). The coolest project in this space in my opinion is [Keyoxide](https://keyoxide.org/). At the time I was looking for a public project to work on the core maintainer of Keyoxide's was rewriting core functionality in Rust. 
+One of the technologies that fascinates me the most is OpenPGP, especially the identity side of things (the subject of my final year project in university was on Enforcement of Access Control in P2P Networks Utilising OpenPGP). The coolest project in this space in my opinion is [Keyoxide](https://keyoxide.org/). At the time I was looking for a public project to work on the core maintainer of Keyoxide's was rewriting core functionality in Rust.
 
 I took the opportunity to brush the dust of my bound copy of [RFC 4880](https://www.rfc-editor.org/rfc/rfc4880) and read the documentation on [Sequoia](https://sequoia-pgp.org/) (an implementation of OpenPGP in Rust), going on to help implement the Keyoxide core in Rust.
 
 Here I learned a lot more about the methods of writing code specific to Rust, things like `map`, `iter`, `match` and more importantly Rust's error handling. I also started using `cargo watch -x fmt -x check -x clippy -x test` to make sure what I was writing was following linting rules. Working on this also gave me the opportunity to work with other engineers in Open Source codebases - something I had once only dreamed of.
 
-At this point, I was more confident with software engineering, and I was able to bring more to discussions about coding at work. 
+At this point, I was more confident with software engineering, and I was able to bring more to discussions about coding at work.
 
 ## Huff-Tree-Tap v0.1.x - 3 years later
 
@@ -84,15 +84,15 @@ As this shows, I managed to achieve a pretty major improvement without changing 
 
 ## Huff-Tree-Tap v0.2.x - Chasing the optimisations
 
-At this point I was happy with how the code looked, but I really wanted to continue improving the performance. 
+At this point I was happy with how the code looked, but I really wanted to continue improving the performance.
 
 To find the slowest parts of my code, I used `cargo flamegraph` to profile my repo. It uses Linux's `perf` under the hood to generate these detailed flame-graphs that help visualise the runtime of functions.
 
 ![Flamegraph](../assets/flamegraph.svg)
 
-This led me to realise that manipulating strings is very slow. When I originally wrote this library, I used `String` to store the bit format encoding as I had found that you could format a `u8` into its binary representation by just calling `format!("{:b}", x)`. 
+This led me to realise that manipulating strings is very slow. When I originally wrote this library, I used `String` to store the bit format encoding as I had found that you could format a `u8` into its binary representation by just calling `format!("{:b}", x)`.
 
-To optimise this I created a type to represent bits called `Bit` which was `u8`s consisting of 0s and 1s. To store a `u8`as a set of `Bit`s, I created a `Vec<Bit>`.  I then wrote traits for the conversion of `u8` to a `Bit`, `Vec<u8>` to `Vec<Bit>` and vice-versa. With `u8` being the smallest byte addressable unit in Rust, this meant my functions were using less memory but also were making no calls to any of the functions from `String`.
+To optimise this I created a type to represent bits called `Bit` which was `u8`s consisting of 0s and 1s. To store a `u8`as a set of `Bit`s, I created a `Vec<Bit>`. I then wrote traits for the conversion of `u8` to a `Bit`, `Vec<u8>` to `Vec<Bit>` and vice-versa. With `u8` being the smallest byte addressable unit in Rust, this meant my functions were using less memory but also were making no calls to any of the functions from `String`.
 
 The flame-graphs continued to be super useful in identifying the longest function calls and the hot paths to focus on to improve the performance.
 

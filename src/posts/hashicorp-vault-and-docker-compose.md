@@ -21,7 +21,7 @@ To do this we need a few things, first you need a running vault instance. I woul
 I have it setup as a service defined in docker-compose. A really simplistic example of the `docker-compose.yml` file:
 
 ```yaml
-version: '3.8'
+version: "3.8"
 services:
   vault:
     build: ./vault
@@ -48,7 +48,7 @@ ADD config.hcl /vault/config/config.hcl
 config.hcl:
 
 ```go
-storage "file" {  
+storage "file" {
     path = "/vault/data"
 }
 
@@ -69,7 +69,7 @@ Creating a secret:
 
 ```bash
 vault kv put kv/services/example apikey="super_secret_api_key"
-# I would recommend prefixing the command with a space 
+# I would recommend prefixing the command with a space
 # this will prevent it from saving it to your bash history
 ```
 
@@ -81,9 +81,9 @@ auto_auth {
    method {
       type = "token_file"
 
-      config { 
+      config {
         #Make sure to update this to the path of your home directory
-        token_filce_path = "/home/username/.vault-token" 
+        token_filce_path = "/home/username/.vault-token"
       }
    }
 }
