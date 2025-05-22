@@ -111,10 +111,10 @@
           media_element = `<video class="mast-comment-attachments-gif" aria-label="${a.description}" lang="en" role="application" src="${a.url}" playsinline="" loop=""></video>`;
           break;
         case "video":
-          media_element = `<video src=${a.url}></video>`;
+          media_element = `<video controls aria-label="${a.description}" src=${a.url}></video>`;
           break;
         case "audio":
-          media_element = `<img src=${a.url}></img>`;
+          media_element = `<audio controls src=${a.url}></audio>`;
           break;
       }
 
