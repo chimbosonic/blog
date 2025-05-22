@@ -131,3 +131,13 @@ docker-compose can now refer to that file making the secret available to the con
 As you can see with Hashicorp vault its possible to generate `.env` files which can be used by your apps or in this case by docker-compose.
 
 ###### Last updated 2023-07-05
+
+<!-- begin comments -->
+<!-- comment blacklist -->
+<script>BBB_MASTODON_COMMENTS_BLACKLIST = new Set([]);</script>
+<h2>Comments</h2>
+<a id="comments-view" href="https://fosstodon.org/@chimbosonic/110662190154487088" data-comments-id="110662190154487088">View Comments</a>
+<a id="comments-reply" href="https://fosstodon.org/@chimbosonic/110662190154487088">Reply</a>
+<div id="comments-container"></div>
+<div id="comments-cta">Click on "View Comments" to see the comments.</div>
+<!-- end comments -->

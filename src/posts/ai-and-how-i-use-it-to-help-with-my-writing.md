@@ -11,3 +11,13 @@ Now asking the AI to write cover letters has also been eye-opening, the amount o
 To conclude, I was quite sceptical about Generative AI, but I am now convinced that this is game changing. We just need slightly better tooling. Perhaps Microsoft should bring back Clippy with a GPT-4 backend.
 
 ###### Last updated 2023-07-04
+
+<!-- begin comments -->
+<!-- comment blacklist -->
+<script>BBB_MASTODON_COMMENTS_BLACKLIST = new Set([]);</script>
+<h2>Comments</h2>
+<a id="comments-view" href="https://fosstodon.org/@chimbosonic/110655830290693185" data-comments-id="110655830290693185">View Comments</a>
+<a id="comments-reply" href="https://fosstodon.org/@chimbosonic/110655830290693185">Reply</a>
+<div id="comments-container"></div>
+<div id="comments-cta">Click on "View Comments" to see the comments.</div>
+<!-- end comments -->

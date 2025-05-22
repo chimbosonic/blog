@@ -116,3 +116,13 @@ Ultimately, the skills, confidence, and mindset I built during this journey have
 And the journey doesn't end here; I'm still learning, still experimenting, and still finding new ways to become a better engineer every day.
 
 ###### Last updated 2025-01-07
+
+<!-- begin comments -->
+<!-- comment blacklist -->
+<script>BBB_MASTODON_COMMENTS_BLACKLIST = new Set([]);</script>
+<h2>Comments</h2>
+<a id="comments-view" href="https://fosstodon.org/@chimbosonic/113799005597093169" data-comments-id="113799005597093169">View Comments</a>
+<a id="comments-reply" href="https://fosstodon.org/@chimbosonic/113799005597093169">Reply</a>
+<div id="comments-container"></div>
+<div id="comments-cta">Click on "View Comments" to see the comments.</div>
+<!-- end comments -->

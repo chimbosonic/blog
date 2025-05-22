@@ -24,3 +24,13 @@ When you move to that directory direnv will load that `.envrc` file into your sh
 N.B.: Make sure you have run `direnv allow .` on the directory otherwise direnv will not load the env files.
 
 ###### Last updated 2023-07-13
+
+<!-- begin comments -->
+<!-- comment blacklist -->
+<script>BBB_MASTODON_COMMENTS_BLACKLIST = new Set([]);</script>
+<h2>Comments</h2>
+<a id="comments-view" href="https://fosstodon.org/@chimbosonic/110706731770171924" data-comments-id="110706731770171924">View Comments</a>
+<a id="comments-reply" href="https://fosstodon.org/@chimbosonic/110706731770171924">Reply</a>
+<div id="comments-container"></div>
+<div id="comments-cta">Click on "View Comments" to see the comments.</div>
+<!-- end comments -->

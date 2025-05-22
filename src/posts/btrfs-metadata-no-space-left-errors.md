@@ -152,3 +152,13 @@ Another gotcha to be aware of if the pool has less than `1Gb` of space, and you 
 It is impossible to cancel a balance once the pool gets into read-only mode. The only way to stop it is to reboot and make sure not to mount the pool on boot. Once booted, you can mount it with the `skip_balance` option (`sudo mount -o skip_balance  /dev/sdc /pool`) which will set the balance operation to `paused`. Use `sudo btrfs balance cancel /pool` to cancel it and proceed with resizing the pool.
 
 ###### Last updated 2023-11-2
+
+<!-- begin comments -->
+<!-- comment blacklist -->
+<script>BBB_MASTODON_COMMENTS_BLACKLIST = new Set([]);</script>
+<h2>Comments</h2>
+<a id="comments-view" href="https://fosstodon.org/@chimbosonic/111342471951670738" data-comments-id="111342471951670738">View Comments</a>
+<a id="comments-reply" href="https://fosstodon.org/@chimbosonic/111342471951670738">Reply</a>
+<div id="comments-container"></div>
+<div id="comments-cta">Click on "View Comments" to see the comments.</div>
+<!-- end comments -->
